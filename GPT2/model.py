@@ -195,6 +195,9 @@ class GPT2LMHeadModel(nn.Module):
         self.transformer = GPT2Model(config)
         self.lm_head = GPT2LMHead(self.transformer.wte.weight, config)
 
+    def reset(self):
+        return None
+    
     def set_tied(self):
         """ Make sure we are sharing the embeddings
         """
